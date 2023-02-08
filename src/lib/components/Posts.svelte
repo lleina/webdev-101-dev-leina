@@ -24,12 +24,12 @@
 						<!-- avatar -->
 						<div class="placeholder avatar">
 							<div class="w-8 rounded-full bg-neutral-focus text-neutral-content">
-								<span class="text-md">{post?.expand?.user?.username?.charAt(0)}</span>
+								<span class="text-md">{post.expand.user.username.charAt(0)}</span>
 							</div>
 						</div>
 
 						<!-- username -->
-						<p class="text-sm font-medium">{post?.expand?.user?.username}</p>
+						<p class="text-sm font-medium">{post.expand.user.username}</p>
 					</div>
 				</div>
 				<!-- photo -->
@@ -42,7 +42,7 @@
 					<p class="mb-4 text-sm">{post.caption}</p>
 
 					<!-- date -->
-					<p class="text-xs">{format(new Date(post.created), 'MMM dd yyyy')}</p>
+					<p class="text-xs">{post.created}</p>
 				</div>
 			</div>
 		{/each}
