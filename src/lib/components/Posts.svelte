@@ -1,11 +1,11 @@
-<script lang="ts">
+<script>
 	import { pb } from '$lib/pocketbase';
-	import { format } from 'date-fns';
 	import { onMount } from 'svelte';
 
-	let posts: any[] = [];
+	let posts = [];
 
 	onMount(async () => {
+		// fetch a paginated records list
 		const resultList = await pb.collection('posts').getList(1, 50, {
 			sort: '-created',
 			expand: 'user'
@@ -29,12 +29,12 @@
 						</div>
 
 						<!-- username -->
-						<p class="text-sm font-medium">{post.expand.user.username}</p>
+						<p class="text-sm font-bold">{post.expand.user.username}</p>
 					</div>
 				</div>
 				<!-- photo -->
 				<div class="w-full">
-					<img src={pb.getFileUrl(post, post?.photos[0])} class="h-[500px] w-full" />
+					<img src={pb.getFileUrl(post, post?.photo)} class="h-[500px] w-full" />
 				</div>
 
 				<div class="py-2 px-4">
