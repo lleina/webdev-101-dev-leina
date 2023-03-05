@@ -38,7 +38,8 @@
 						class="file-input-bordered file-input w-full max-w-xs"
 						on:change={handleFileChange}
 					/>
-					<button class="btn-primary btn-block btn" on:click={handleCreatePost}>Create posts</button
+					<label for="my-modal-4" class="btn-primary btn-block btn" on:click={handleCreatePost}
+						>Create Post</label
 					>
 				</div>
 			</label>
